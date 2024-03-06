@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Начало";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<video muted autoplay loop>
+	<source src="~/assets/video/runner_-_10809 (720p).mp4" type="video/mp4" />
+</video>
+<!-- ======= Hero Section ======= -->
+<main id="main">
+	<section id="hero">
+		<div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+			<h1>Тренирай. Заздравявай. Релаксирай.</h1>
+			<h2>Всичко, от което имаш нужда за твоето здраве, на едно място.</h2>
+			<div class="d-flex">
+				<a asp-controller="Home" asp-action="About" class="btn-get-started scrollto">Начало</a>
+				<a href="https://youtu.be/xZ0V6oBvRAE" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Гледай видео</span></a>
+			</div>
+		</div>
+	</section><!-- End Hero -->
+</main><!-- End #main -->
