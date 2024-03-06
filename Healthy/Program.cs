@@ -38,7 +38,7 @@ namespace Healthy
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 			app.MapRazorPages();
 
-			app.RunAsync();
+			app.Run();
 		}
 	}
 }
