@@ -1,10 +1,3 @@
-/**
-* Template Name: Dewi
-* Updated: Jan 29 2024 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -140,22 +133,11 @@ h6 {
         padding: 10px 0;
     }
 
-    #header .logo {
-        font-size: 32px;
-        margin: 0;
-        padding: 0;
-        line-height: 1;
-        font-weight: 700;
-        letter-spacing: 2px;
+
+    #header .logo img {
+        height: 53px;
     }
 
-        #header .logo a {
-            color: #fff;
-        }
-
-        #header .logo img {
-            max-height: 40px;
-        }
 
 
 
@@ -434,7 +416,7 @@ h6 {
     }
 
 #bigwrapper {
-    display:flex;
+    display: flex;
 }
 /*--------------------------------------------------------------
 # Sidebar
@@ -451,7 +433,6 @@ h6 {
     max-width: 264px;
     min-width: 264px;
     transition: all 0.35s ease-in-out;
-
     z-index: 997;
 }
 
@@ -583,7 +564,7 @@ a.sidebar-link {
         #hero .btn-get-started:hover {
             background: #e5e4d9;
             border: 2px solid #fff;
-            text-shadow:1px 1px 2px black;
+            text-shadow: 1px 1px 2px black;
         }
 
     #hero .btn-watch-video {
@@ -634,14 +615,14 @@ video {
     right: 0;
     left: 0;
     z-index: 1030;
-    width:100%;
+    width: 100%;
 }
 
 audio {
-    position:fixed;
-    left:20px;
-    width:100px;
-    height:20px;
+    position: fixed;
+    left: 20px;
+    width: 100px;
+    height: 20px;
 }
 
 
