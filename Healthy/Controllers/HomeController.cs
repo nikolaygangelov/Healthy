@@ -18,7 +18,32 @@ namespace Healthy.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult PortfolioDetails()
+        {
+            return View();
+        }
+
+        public IActionResult ContactDetails()
+        {
+            return View();
+        }
+
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        public IActionResult Team()
+        {
+            return View();
+        }
+
+        public IActionResult Testimonials()
         {
             return View();
         }
