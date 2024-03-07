@@ -60,13 +60,7 @@
 					@await Component.InvokeAsync(nameof(ContactsDetailsComponent));
 					@await Component.InvokeAsync(nameof(ReferencesComponent));
 					@await Component.InvokeAsync(nameof(ServicesComponent));
-					<div class="col-lg-4 col-md-6 footer-newsletter">
-						<h4>Нашият бюлетин</h4>
-						<p>С абонирането за нашия бюлетин получавате безплатен едномесечен достъп до шкафче за лични вещи</p>
-						<form action="" method="post">
-							<input type="email" name="email"><input type="submit" value="Абонирай се">
-						</form>
-					</div>
+					@await Component.InvokeAsync(nameof(NewsletterComponent));
 				</div>
 			</div>
 		</div>
