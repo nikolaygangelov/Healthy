@@ -5,11 +5,11 @@
 <ul class="navbar-nav">
 	@if (SignInManager.IsSignedIn(User))
 	{
-		<a class="dropdown-item" href="#">Обща информация</a>
-		<a class="dropdown-item lighter" href="#">Плащания</a>
-		<a class="dropdown-item lighter" href="#">Известия</a>
-		<a class="dropdown-item lighter" href="#">Моят график</a>
-		<a class="dropdown-item lighter" href="#">Настройки</a>
+		<li><a class="dropdown-item" href="#">Обща информация</a></li>
+		<li><a class="dropdown-item lighter" href="#">Плащания</a></li>
+		<li><a class="dropdown-item lighter" href="#">Известия</a></li>
+		<li><a class="dropdown-item lighter" href="#">Моят график</a></li>
+		<li><a class="dropdown-item lighter" href="#">Настройки</a></li>
 		<li class="dropdown-divider"></li>
 		<li class="nav-item">
 			<a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
@@ -22,8 +22,8 @@
 	}
 	else
 	{
-		<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Регистрирай се</a>
+		<li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Регистрирай се</a></li>
 
-		<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Влез</a>
+		<li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Влез</a></li>
 	}
 </ul>
