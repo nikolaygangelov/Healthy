@@ -6,7 +6,6 @@
 	<title>Healty - @ViewData["Title"]</title>
 	<meta content="" name="description">
 	<meta content="" name="keywords">
-	@* 	<script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script> *@
 	<link rel="stylesheet" href="~/assets/css/style.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/assets/Healthy.styles.css" asp-append-version="true" />
 
@@ -58,24 +57,7 @@
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="footer-info">
-							<h3>Healty</h3>
-							<p>
-								ул. Мария Луиза, 51 <br>
-								Бургас, България<br><br>
-								<strong>Телефон:</strong> +3595 589 554<br>
-								<strong>Имейл:</strong> healty@gmail.com<br>
-							</p>
-							<div class="social-links mt-3">
-								<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-								<a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-								<a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-								<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-								<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-							</div>
-						</div>
-					</div>
+					@await Component.InvokeAsync(nameof(ContactsDetailsComponent));
 					<div class="col-lg-2 col-md-6 footer-links">
 						<h4>Полезни връзки</h4>
 						<ul>
