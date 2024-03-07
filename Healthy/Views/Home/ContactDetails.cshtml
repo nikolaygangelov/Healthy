@@ -1,0 +1,67 @@
+﻿@{
+	ViewData["Title"] = "Контакти";
+}
+
+		<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+	<div class="container" data-aos="fade-up">
+
+		<div class="section-title">
+			<h2>Контакти</h2>
+			<p>Свържете се с нас</p>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="info-box">
+							<i class="bx bx-map"></i>
+							<h3>Нашият адрес</h3>
+							<p>ул. Мария Луиза, 51,	Бургас, България</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="info-box mt-4">
+							<i class="bx bx-envelope"></i>
+							<h3>Пишете ни на имейл</h3>
+							<p>healty@gmail.com</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="info-box mt-4">
+							<i class="bx bx-phone-call"></i>
+							<h3>Позвънете ни</h3>
+							<p>+3595 589 554<br>+3596 589 554</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 mt-4 mt-lg-0">
+				<form action="forms/contact.php" method="post" role="form" class="php-email-form">
+					<div class="row">
+						<div class="col-md-6 form-group">
+							<input type="text" name="name" class="form-control" id="name" placeholder="Вашето име" required>
+						</div>
+						<div class="col-md-6 form-group mt-3 mt-md-0">
+							<input type="email" class="form-control" name="email" id="email" placeholder="Вашият имейл" required>
+						</div>
+					</div>
+					<div class="form-group mt-3">
+						<input type="text" class="form-control" name="subject" id="subject" placeholder="Тема" required>
+					</div>
+					<div class="form-group mt-3">
+						<textarea class="form-control" name="message" rows="5" placeholder="Съобщение" required></textarea>
+					</div>
+					<div class="my-3">
+						<div class="loading">Зареждане</div>
+						<div class="error-message"></div>
+						<div class="sent-message">Вашето съобщение беше изпратено. Благодарим Ви!</div>
+					</div>
+					<div class="text-center"><button type="submit">Изпрати съобщение</button></div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section><!-- End Contact Section -->
