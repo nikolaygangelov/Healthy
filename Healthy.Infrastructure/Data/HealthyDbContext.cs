@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Healthy.Infrasstructure.Data
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public class HealthyDbContext : IdentityDbContext
 	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+		public HealthyDbContext(DbContextOptions<HealthyDbContext> options)
 			: base(options)
 		{
 		}
