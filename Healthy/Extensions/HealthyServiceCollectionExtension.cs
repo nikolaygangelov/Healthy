@@ -1,4 +1,4 @@
-﻿using Healthy.Data;
+﻿using Healthy.Infrasstructure.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
