@@ -3,12 +3,8 @@
 	ViewBag.Title = "Седмичен график";
 }
 
-
-<h2 class="text-center" style="margin-top:120px; color:#fff;">@ViewBag.Title - Зумба</h2>
-<hr style="color:#fff;" />
-
 <form>
-	<div class="row">
+	<div class="row" style="margin-top:120px; margin-left:119px;">
 		<div class="form-group col-md-1 d-flex justify-content-between">
 			<div class="form-group">
 				<label for="Category"></label>
@@ -21,14 +17,16 @@
 				</select>
 			</div>
 		</div>
-
-		
+	
 		<div class="col-md-1">
 			<div class="form-group mt-4">
 				<input type="submit" value="Търси" class="btn fw-bold" style="background:white;" />
 			</div>
 		</div>
+
+		<div class ="col-md-7 text-center"><h2 style="color:#fff; margin-top:28px;">@ViewBag.Title - Зумба</h2></div>
 	</div>
+	<hr style="color:#fff;" />
 </form>
 
 
@@ -50,7 +48,7 @@
 			{
 				<div class="carousel-item active">
 					<div class="text-center mb-4" style="color:white;">
-						@DateTime.Today.ToString("dd.MM.yyyy    Dddd")
+						@DateTime.Today.ToString("dd.MM.yyyy    dddd")
 					</div>
 					<div class="text-center row d-block" style="margin-bottom:120px;margin-left:541px;margin-right:463px;">
 						@foreach (var time in TimeTable)

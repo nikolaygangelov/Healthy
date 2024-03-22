@@ -19,7 +19,7 @@ body {
 }
 
 a {
-    color: #ff4a17;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -838,6 +838,7 @@ section {
     }
 }
 
+
 /*--------------------------------------------------------------
 # About Boxes
 --------------------------------------------------------------*/
@@ -1173,6 +1174,158 @@ section {
         opacity: 1;
     }
 
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+@media(max-width:768px) {
+    #post {
+        width: 100%;
+    }
+}
+
+.container3 {
+    margin-left:83px;
+    margin-top:20px;
+}
+
+#post {
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 50%;
+}
+
+.comments {
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+.comment {
+    border: 1px solid rgba(16, 46, 46, 1);
+    background-color: rgba(16, 46, 46, 0.973);
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+    .comment h4, .comment span {
+        display: inline;
+    }
+
+    .comment p, .comment span {
+        color: rgb(184, 183, 183);
+    }
+
+h4 {
+    color: white;
+    font-weight: bold;
+}
+
+.container3 label {
+    color: rgb(212, 208, 208);
+}
+
+#align-form {
+    margin-top: 0px;
+}
+
+#align-form button {
+    color:#fff;
+}
+
+.form-group p a {
+    color: white;
+}
+
+#checkbx {
+    background-color: black;
+}
+
+.container3 img {
+    margin-right: 15px;
+    position: static;
+}
+
+.form-group input, .form-group textarea {
+    background-color: black;
+    border: 1px solid rgba(16, 46, 46, 1);
+    border-radius: 12px;
+}
+
+.container3 form {
+    border: 1px solid rgba(16, 46, 46, 1);
+    background-color: rgba(16, 46, 46, 0.973);
+    border-radius: 5px;
+    padding: 20px 20px 0px 20px;
+}
+
+.rating {
+    display: block;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+    .rating > input {
+        display: none;
+    }
+
+    .rating > label {
+        position: relative;
+        width: 1em;
+        font-size: 2vw;
+        color: #FFD600;
+        cursor: pointer;
+    }
+
+        .rating > label::before {
+            content: "\2605";
+            position: absolute;
+            opacity: 0;
+        }
+
+        .rating > label:hover:before,
+        .rating > label:hover ~ label:before {
+            opacity: 1 !important;
+        }
+
+    .rating > input:checked ~ label:before {
+        opacity: 1;
+    }
+
+    .rating:hover > input:checked ~ label:before {
+        opacity: 0.4;
+    }
+
+    .rating p {
+        color:#fff;
+        margin-top:10px;
+    }
+
+    #comment-like {
+        display:flex;
+        justify-content:flex-end;
+    }
+
+    #comment-like a {
+        margin-right: 5px;
+        color:#fff;
+    }
+
+.comment-like-icon {
+    width: 1em;
+    margin-right: 9px;
+    fill: #fff;
+}
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/

@@ -1,10 +1,14 @@
-/**
-* Template Name: Dewi
-* Updated: Jan 29 2024 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
+const clicksElement = document.getElementById("clicks");
+const likeCount = JSON.parse(localStorage.getItem('likeCount')) || 0;
+clicksElement.innerHTML = likeCount
+
+function onClick() {
+    likeCount++;
+    clicksElement.innerHTML = likeCount;
+    localStorage.setItem('likeCount', JSON.stringify(likeCount));
+};
+
 (function () {
     "use strict";
 
@@ -14,6 +18,8 @@
      * Easy selector helper function
      */
 
+    
+        
     
 
     const select = (el, all = false) => {
