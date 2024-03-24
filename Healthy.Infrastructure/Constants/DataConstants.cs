@@ -21,6 +21,8 @@
 		public const int CategoryNameMaxLength = 50;
 		public const int CategoryNameMinLength = 3;
 
+		public const int ReservedHourMaxLength = 13;
+		public const int ReservedHourMinLength = 13;
 		public const int DueDateMessageMaxLength = 100;
 		public const int DueDateMessageMinLength = 20;
 

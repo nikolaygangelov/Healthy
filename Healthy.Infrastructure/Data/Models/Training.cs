@@ -61,17 +61,10 @@ namespace Healthy.Infrastructure.Data.Models
 
 
 		[Required]
-		[Comment("Код на график")]
-		public int ScheduleId { get; set; }
-
-		[ForeignKey(nameof(ScheduleId))]
-		public Schedule Schedule { get; set; } = null!;
-
-
-		[Required]
 		[Comment("Активност")]
 		public bool IsDeleted { get; set; }
 
+		public List<TrainingBookingHour> TrainingsBookingHours { get; set; } = new List<TrainingBookingHour>();
 		public List<TrainingCustomer> TrainingsCustomers { get; set; } = new List<TrainingCustomer>();
 		public List<TrainingTrainer> TrainingsTrainers { get; set; } = new List<TrainingTrainer>();
 		public List<Feedback> Feedbacks { get; set; } = new List<Feedback>();

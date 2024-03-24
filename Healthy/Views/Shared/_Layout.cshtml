@@ -38,7 +38,7 @@
 				<source src="~/assets/audio/videoplayback.m4a" type="audio/mp4" />
 			</audio>
 				@await Component.InvokeAsync(nameof(ProfileMenuComponent));
-			<a href="#" class="logo"><img src="~/assets/img/logo.png" alt="" class="img-fluid"></a>
+			<a asp-controller="Home" asp-action="Index" class="logo"><img src="~/assets/img/logo.png" alt="" class="img-fluid"></a>
 			<nav id="navbar" class="navbar">
 				@await Component.InvokeAsync(nameof(MainMenuComponent));
 				<i class="bi bi-list mobile-nav-toggle"></i>

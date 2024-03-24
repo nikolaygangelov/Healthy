@@ -21,8 +21,9 @@ namespace Healthy.Infrastructure.Data.SeedDb
 
 		public Training Swimming { get; set; }
 
-		public Schedule Weekly { get; set; }
+		public BookingHour FirstHour { get; set; }
 
+		public Commentator FirstCommentator { get; set; }
 		public Feedback ZumbaFeedback { get; set; }
 
 
@@ -32,7 +33,8 @@ namespace Healthy.Infrastructure.Data.SeedDb
 			SeedTrainer();
 			SeedCategories();
 			SeedTrainings();
-			SeedSchedules();
+			SeedBookingHours();
+			SeedCommentators();
 			SeedFeedbacks();
         }
 
@@ -146,14 +148,23 @@ namespace Healthy.Infrastructure.Data.SeedDb
 			};
 		}
 
-		private void SeedSchedules()
+		private void SeedBookingHours()
 		{
-			Weekly = new Schedule()
+			FirstHour = new BookingHour()
 			{
 				Id = 1,
-				StartDate = DateTime.Today.ToString("dd.MM.yyyy    Dddd"),
 				DueDateMessage = "Имайте предвид, че крайният срок за отмяна на записан час е 2 часа преди започване на тренировката",
+				ReservedHour = "08.00 - 09.00"
+			};
+		}
 
+		private void SeedCommentators()
+		{
+			FirstCommentator = new Commentator()
+			{
+				Id = 1,
+				FeedbackCommentatorName = "Николай Ангелов",
+				UserId = ClientUser.Id
 			};
 		}
 
@@ -166,8 +177,10 @@ namespace Healthy.Infrastructure.Data.SeedDb
 				TrainingRating = 6,
 				TrainerRating = 6,
 				TrainingId = 1,
+				CommentatorId = 1
 			};
 		}
+
 
 	}
 }

@@ -44,6 +44,10 @@ namespace Healthy.Infrastructure.Data.Models
 		[ForeignKey(nameof(UserId))]
 		public IdentityUser User { get; set; } = null!;
 
+		public List<TrainerBookingHour> TrainersBookingHours { get; set; } = new List<TrainerBookingHour>();
+
+		public List<TrainingTrainer> TrainingsTrainers { get; set; } = new List<TrainingTrainer>();
+
 		[Required]
 		[Comment("Активност")]
 		public bool IsDeleted { get; set; }

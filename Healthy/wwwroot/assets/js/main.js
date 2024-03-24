@@ -1,18 +1,31 @@
 
-const clicksElement = document.getElementById("clicks");
-const likeCount = JSON.parse(localStorage.getItem('likeCount')) || 0;
-clicksElement.innerHTML = likeCount
 
-function onClick() {
-    likeCount++;
-    clicksElement.innerHTML = likeCount;
-    localStorage.setItem('likeCount', JSON.stringify(likeCount));
-};
 
 (function () {
     "use strict";
+    window.onload = function () {
 
-    
+        // JavaScript
+        const likeButtons = document.getElementsByClassName('like-button');
+        const likeCountElements = document.getElementsByClassName('like-count');
+
+        // Check if like count data exists in localStorage and set the count accordingly
+        let likeCount = JSON.parse(localStorage.getItem('likeCount')) || 0;
+        for (let i = 0; i < likeCountElements.length; i++) {
+            likeCountElements[i].innerText = likeCount;
+        }
+
+        // Listen for clicks on the like button and increment the like count
+        for (let i = 0; i < likeButtons.length; i++) {
+            likeButtons[i].addEventListener('click', () => {
+                likeCount++;
+                likeCountElements[i].innerText = likeCount;
+
+                // Store the updated like count in localStorage
+                localStorage.setItem('likeCount', JSON.stringify(likeCount));
+            });
+        }
+    }
 
     /**
      * Easy selector helper function

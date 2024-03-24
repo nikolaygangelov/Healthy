@@ -1,30 +1,45 @@
-﻿@model Schedule
+﻿@model BookingHour
 @{
 	ViewBag.Title = "Седмичен график";
 }
 
 <form>
-	<div class="row" style="margin-top:120px; margin-left:119px;">
+	<div class="row" style="margin-top:120px; margin-left:106px;">
 		<div class="form-group col-md-1 d-flex justify-content-between">
 			<div class="form-group">
-				<label for="Category"></label>
+				<label for="Category" style="color:#fff;">Категория</label>
 				<select for="Category" class="form-control">
-					<option value="">All</option>
+					<option value="">Всички</option>
 					@* @foreach (var category in Model.Categories)
 					{
-						<option value="@category">@category</option>
+					<option value="@category">@category</option>
 					} *@
 				</select>
 			</div>
 		</div>
-	
+
+		<div class="form-group col-md-1 d-flex justify-content-between">
+			<div class="form-group">
+				<label for="Training" style="color:#fff;">Тренировка</label>
+				<select for="Training" class="form-control">
+					<option value="">Всички</option>
+					@* @foreach (var training in Model.Trainings)
+					{
+					<option value="@training">@training</option>
+					} *@
+				</select>
+			</div>
+		</div>
+
 		<div class="col-md-1">
 			<div class="form-group mt-4">
 				<input type="submit" value="Търси" class="btn fw-bold" style="background:white;" />
 			</div>
 		</div>
 
-		<div class ="col-md-7 text-center"><h2 style="color:#fff; margin-top:28px;">@ViewBag.Title - Зумба</h2></div>
+		<div class="col-md-5 text-center">
+			<h2 style="color:#fff; margin-top:28px;">@ViewBag.Title - Зумба</h2>
+		</div>
 	</div>
 	<hr style="color:#fff;" />
 </form>
@@ -32,30 +47,30 @@
 
 @{
 	List<string> TimeTable = new List<string>();
-	TimeTable.Add("08.00 - 09.00");
-	TimeTable.Add("09.30 - 10.30");
-	TimeTable.Add("11.00 - 12.00");
-	TimeTable.Add("13.00 - 14.00");
-	TimeTable.Add("14.30 - 15.30");
-	TimeTable.Add("16.00 - 17.00");
-	TimeTable.Add("17.30 - 18.30");
+	TimeTable.Add("08.00 - 09.00"); //bookingHour
+	TimeTable.Add("09.30 - 10.30"); //bookingHour
+	TimeTable.Add("11.00 - 12.00"); //bookingHour
+	TimeTable.Add("13.00 - 14.00"); //bookingHour
+	TimeTable.Add("14.30 - 15.30"); //bookingHour
+	TimeTable.Add("16.00 - 17.00"); //bookingHour
+	TimeTable.Add("17.30 - 18.30"); //bookingHour
 }
 <div id="carouselExampleControls" class="carousel slide">
 	<div class="carousel-inner">
 		@for (int i = 0; i < 7; i++)
 		{
-			if(i == 0)
+			if (i == 0)
 			{
 				<div class="carousel-item active">
 					<div class="text-center mb-4" style="color:white;">
-						@DateTime.Today.ToString("dd.MM.yyyy    dddd")
+						@DateTime.Today.ToString("dd.MM.yyyy dddd")
 					</div>
 					<div class="text-center row d-block" style="margin-bottom:120px;margin-left:541px;margin-right:463px;">
-						@foreach (var time in TimeTable)
+						@foreach (var BookingHour@* .ReservedHour *@ in TimeTable @* @Model*@)
 						{
-
 							<div class="col-6" style="width:89%;">
-								<a class="btn mb-2 w-100 p-3 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:white;">@time</a>
+								<a class="btn mb-2 w-100 p-3 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+									style="background-color:white;">@BookingHour@* .ReservedHour *@</a>
 								<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog ">
 										<div class="modal-content">
@@ -68,6 +83,9 @@
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-primary">Запиши се</button>
+												@* <form class="input-group-sm " asp-controller="Schedule" asp-action="Join" asp-route-id="@hour.Id">
+													<input type="submit" value="Запиши се" class="fs-6 btn btn-warning mb-3 w-100 p-3 fw-bold" />
+												</form> *@
 												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
 											</div>
 										</div>
@@ -78,31 +96,31 @@
 							@* <a asp-controller="Event" asp-action="Details" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">View Details</a>
 				@if (User.Identity.Name == e.Organiser)
 				{
-				<a asp-controller="Event" asp-action="Edit" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
+					<a asp-controller="Event" asp-action="Edit" asp-route-id="@e.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
 				}
 				else
 				{
-				<form class="input-group-sm " asp-controller="Event" asp-action="Join" asp-route-id="@e.Id">
-				<input type="submit" value="Join the Event" class="fs-6 btn btn-warning mb-3 w-100 p-3 fw-bold" />
-				</form>
+					<form class="input-group-sm " asp-controller="Event" asp-action="Join" asp-route-id="@e.Id">
+						<input type="submit" value="Join the Event" class="fs-6 btn btn-warning mb-3 w-100 p-3 fw-bold" />
+					</form>
 				} *@
 
 						}
 					</div>
 				</div>
-			} 
+			}
 			else
 			{
 				<div class="carousel-item">
 					<div class="text-center mb-4" style="color:white;">
-						@DateTime.Today.AddDays(i).ToString("dd/MM/yyyy")
+						@DateTime.Today.AddDays(i).ToString("dd/MM/yyyy dddd")
 					</div>
 					<div class="text-center row d-block" style="margin-bottom:120px;margin-left:541px;margin-right:463px;">
-						@foreach (var time in TimeTable)
+						@foreach (var BookingHour@* .ReservedHour *@ in TimeTable)
 						{
-
 							<div class="col-6" style="width:89%;">
-								<a class="btn mb-2 w-100 p-3 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:white;">@time</a>
+								<a class="btn mb-2 w-100 p-3 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+									style="background-color:white;">@BookingHour@* .ReservedHour *@</a>
 								<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog ">
 										<div class="modal-content">
@@ -138,7 +156,7 @@
 					</div>
 				</div>
 			}
-		}		
+		}
 	</div>
 	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>

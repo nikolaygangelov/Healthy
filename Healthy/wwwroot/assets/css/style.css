@@ -1282,6 +1282,7 @@ h4 {
     .rating > label {
         position: relative;
         width: 1em;
+        height: 5px;
         font-size: 2vw;
         color: #FFD600;
         cursor: pointer;
@@ -1309,6 +1310,7 @@ h4 {
     .rating p {
         color:#fff;
         margin-top:10px;
+        margin-bottom:5px;
     }
 
     #comment-like {

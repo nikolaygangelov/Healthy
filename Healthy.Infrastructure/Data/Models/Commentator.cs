@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using static Healthy.Infrastructure.Constants.DataConstants;
 
@@ -18,6 +18,9 @@ namespace Healthy.Infrastructure.Data.Models
 		[Comment("Име на коментатор")]
 		[MaxLength(CommentatorNameMaxLength)]
 		public string FeedbackCommentatorName { get; set; } = string.Empty;
+
+		[Comment("Снимка на коментатор")]
+		public byte[]? PictureSource { get; set; }
 
 		[Required]
 		[Comment("Код на потребител")]

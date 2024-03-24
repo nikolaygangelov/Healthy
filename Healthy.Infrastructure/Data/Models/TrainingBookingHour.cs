@@ -4,16 +4,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Healthy.Infrastructure.Data.Models
 {
-	public class TrainingTrainer
+	public class TrainingBookingHour
 	{
 		public int TrainingId { get; set; }
 		[ForeignKey(nameof(TrainingId))]
 		public Training Training { get; set; } = null!;
 
 
-		public int TrainerId { get; set; }
-		[ForeignKey(nameof(TrainerId))]
-		public Trainer Trainer { get; set; } = null!;
+		public int BookingHourId { get; set; }
+		[ForeignKey(nameof(BookingHourId))]
+		public BookingHour BookingHour { get; set; } = null!;
 
 		[Required]
 		[Comment("Активност")]
