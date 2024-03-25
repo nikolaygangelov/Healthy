@@ -33,20 +33,11 @@ namespace Healthy.Controllers
             return View();
         }
 
-        public IActionResult Services()
-        {
-            return View();
-        }
-
         public IActionResult Team()
         {
             return View();
         }
 
-        public IActionResult Testimonials()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
