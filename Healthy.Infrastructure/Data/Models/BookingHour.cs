@@ -28,6 +28,7 @@ namespace Healthy.Infrastructure.Data.Models
 		public bool IsDeleted { get; set; }
 
 		public List<TrainingBookingHour> TrainingsBookingHours { get; set; } = new List<TrainingBookingHour>();
+		public List<ServiceBookingHour> ServicesBookingHours { get; set; } = new List<ServiceBookingHour>();
 
 		public List<TrainerBookingHour> TrainersBookingHours { get; set; } = new List<TrainerBookingHour>();
 

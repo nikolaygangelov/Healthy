@@ -1356,7 +1356,7 @@ h4 {
         .portfolio #portfolio-flters li:hover,
         .portfolio #portfolio-flters li.filter-active {
             color: #fff;
-            background: #ff4a17;
+            background: blue;
         }
 
         .portfolio #portfolio-flters li:last-child {

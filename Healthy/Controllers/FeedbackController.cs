@@ -42,5 +42,11 @@ namespace Healthy.Controllers
 
 			return Ok();
 		}
+
+        [HttpGet]
+        public async Task<IActionResult> Add()
+		{
+			return View();
+		}
 	}
 }

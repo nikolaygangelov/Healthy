@@ -41,7 +41,7 @@
 		</div>
 
 		<div class="col-md-7 text-center">
-			<h2 style="color:#fff; margin-top:28px;">@ViewBag.Title - Зумба</h2>
+			<h2 style="color:#fff; margin-top:28px;">@ViewBag.Title - Model</h2>
 		</div>
 	</div>
 	<hr style="color:#fff;" />
@@ -111,71 +111,21 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
-			<form asp-action="Add" method="post" id="align-form">
-				<div class="form-group">
-					<h4>Остави коментар</h4>
-					<label @*asp-for="@Model.FeedbackCommentatorName"*@>Име</label>
-					<input type="text" @* asp-for="@Model.FeedbackCommentatorName" *@ class="form-control">
-					@* <span asp-validation-for="@Model.FeedbackCommentatorName" class="text-danger"></span> *@
-				</div>
-				<div class="form-group">
-					<label @* asp-for="@Model.Training.Title"*@>Тренировка</label>
-					<input type="text" @* asp-for="@Model.Training.Title" *@ class="form-control">
-					@* <span asp-validation-for="@Model.Training.Title" class="text-danger"></span> *@
-				</div>
-				<div class="form-group">
-					<label @* asp-for="@Model.Training.Category.Name"*@>Категория на тренировка</label>
-					<input type="text" @* asp-for="@Model.Training.Category.Name" *@ class="form-control">
-					@* <span asp-validation-for="@Model.Training.Category.Name" class="text-danger"></span> *@
-				</div>
-				<div class="form-group">
-					<label @* asp-for="@Model.FeedbackText"*@>Коментар</label>
-					<textarea aria-required="true" cols="30" rows="5" class="form-control"
-							  style="background-color: black;"> @* asp-for="@Model.FeedbackText"*@
-					</textarea>
-					@* <span asp-validation-for="@Model.FeedbackText" class="text-danger"></span> *@
-					<div class="rating">
-						<p>Тренировка</p>
-						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="6"><label for="6">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="5"><label for="5">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="4"><label for="4">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="3"><label for="3">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="2"><label for="2">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="1"><label for="1">☆</label>
-						<p>Треньор</p>
-						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="6"><label for="6">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="5"><label for="5">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="4"><label for="4">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="3"><label for="3">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="2"><label for="2">☆</label>
-						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="1"><label for="1">☆</label>
-					</div>
-				</div>
-				<div class="form-group">
-					<form method="post" enctype="multipart/form-data" asp-controller="Feedback" asp-action="UploadFiles">
-						<label class="mb-2">Профилна снимка</label>
-						<input class="form-control" type="file" name="files">
-						<button class="btn" type="submit" value="Upload">Upload</button>
-					</form>
-				</div>
-				@if (SignInManager.IsSignedIn(User))
-				{
-					<div class="form-group">
-						<button type="button" id="post" class="btn">Изпрати</button>
-					</div>
-				}
-				else
-				{
-					<div class="form-group">
-						<button type="button" id="post" class="btn" disabled>Изпрати</button>
-					</div>
-					<p style="color:white;">
-						<a asp-area="Identity" asp-page="/Account/Register"><span class="text-primary h3">Регистрирай се</span></a>
-						или<a asp-area="Identity" asp-page="/Account/Login"><span class="text-primary h3">Влез</span></a>, за да коментираш
-					</p>
-				}
-			</form>
-		</div>
+		@if (SignInManager.IsSignedIn(User)) //User.Identity.IsAuthenticated
+		{
+			<div class="form-group col-1 mt-3">
+				<a type="button" id="post" asp-controller="Feedback" asp-action="Add" class="btn p-2 bx bx-plus preview-link"
+				   title="Остави коментар"></a>
+			</div>
+		}
+		else
+		{
+			<div class="col-5 mt-3">
+				<p style="color:white;">
+					<a asp-area="Identity" asp-page="/Account/Register"><span class="text-primary h3">Регистрирай се</span></a>
+					или<a asp-area="Identity" asp-page="/Account/Login"><span class="text-primary h3">Влез</span></a>, за да коментираш
+				</p>
+			</div>
+		}
 	</div>
 </div>

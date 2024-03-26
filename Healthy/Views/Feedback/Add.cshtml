@@ -1,0 +1,110 @@
+﻿@model Feedback
+@{
+	ViewBag.Title = "Коментар";
+}
+
+<form>
+	<div class="row" style="margin-top:120px; margin-left:119px;">
+		<div class="form-group col-md-1 d-flex justify-content-between">
+			<div class="form-group">
+				<label for="Category" style="color:#fff;">Категория</label>
+				<select for="Category" class="form-control">
+					<option value="">Всички</option>
+					@* @foreach (var category in Model.Categories)
+					{
+					<option value="@category">@category</option>
+					} *@
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group col-md-1 d-flex justify-content-between">
+			<div class="form-group">
+				<label for="Training" style="color:#fff;">Тренировка / Услуга</label>
+				<select for="Training" class="form-control">
+					<option value="">Всички</option>
+					@* @foreach (var training in Model.Trainings)
+					{
+					<option value="@training">@training</option>
+					} *@
+				</select>
+			</div>
+		</div>
+
+		<div class="col-md-1">
+			<div class="form-group mt-4">
+				<input type="submit" value="Търси" class="btn fw-bold" style="background:white;" />
+			</div>
+		</div>
+
+		<div class="col-md-7 text-center">
+			<h2 style="color:#fff; margin-top:28px;">@ViewBag.Title</h2>
+		</div>
+	</div>
+	<hr style="color:#fff;" />
+</form>
+
+<div class="container3">
+	<div class="row d-flex justify-content-center">
+		<div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+			<form asp-action="Add" method="post" id="align-form">
+				<div class="form-group">
+					<label @*asp-for="@Model.FeedbackCommentatorName"*@>Име</label>
+					<input type="text" @* asp-for="@Model.FeedbackCommentatorName" *@ class="form-control">
+					@* <span asp-validation-for="@Model.FeedbackCommentatorName" class="text-danger"></span> *@
+				</div>
+				<div class="form-group">
+					<label @* asp-for="@Model.Training.Title"*@>Тренировка / Услуга</label>
+					<input type="text" @* asp-for="@Model.Training.Title" *@ class="form-control">
+					@* <span asp-validation-for="@Model.Training.Title" class="text-danger"></span> *@
+				</div>
+				<div class="form-group">
+					<label @* asp-for="@Model.Training.Category.Name"*@>Категория на тренировка</label>
+					<input type="text" @* asp-for="@Model.Training.Category.Name" *@ class="form-control">
+					@* <span asp-validation-for="@Model.Training.Category.Name" class="text-danger"></span> *@
+				</div>
+				<div class="form-group">
+					<label @* asp-for="@Model.FeedbackText"*@>Коментар</label>
+					<textarea aria-required="true" cols="30" rows="5" class="form-control"
+							  style="background-color: black;"> @* asp-for="@Model.FeedbackText"*@
+							</textarea>
+					@* <span asp-validation-for="@Model.FeedbackText" class="text-danger"></span> *@
+					<div class="rating">
+						<p>Тренировка</p>
+						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="6"><label for="6">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="5"><label for="5">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="4"><label for="4">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="3"><label for="3">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="2"><label for="2">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainingRating" *@ value="1"><label for="1">☆</label>
+						<p>Треньор</p>
+						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="6"><label for="6">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="5"><label for="5">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="4"><label for="4">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="3"><label for="3">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="2"><label for="2">☆</label>
+						<input type="radio" @* asp-for="@Model.TrainerRating" *@ value="1"><label for="1">☆</label>
+						<p>Услуга</p>
+						<input type="radio" @* asp-for="@Model.ServiceRating" *@ value="6"><label for="6">☆</label>
+						<input type="radio" @* asp-for="@Model.ServiceRating" *@ value="5"><label for="5">☆</label>
+						<input type="radio" @* asp-for="@Model.ServiceRating" *@ value="4"><label for="4">☆</label>
+						<input type="radio" @* asp-for="@Model.ServiceRating" *@ value="3"><label for="3">☆</label>
+						<input type="radio" @* asp-for="@Model.ServiceRating" *@ value="2"><label for="2">☆</label>
+						<input type="radio" @* asp-for="@Model.ServiceRating" *@ value="1"><label for="1">☆</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<form method="post" enctype="multipart/form-data" asp-controller="Feedback" asp-action="UploadFiles">
+						<label class="mb-2">Профилна снимка</label>
+						<input class="form-control" type="file" name="files">
+						<button class="btn" type="submit" value="Upload">Upload</button>
+					</form>
+				</div>
+				<div class="form-group">
+					<input type="submit" id="post" class="btn" value="Изпрати" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

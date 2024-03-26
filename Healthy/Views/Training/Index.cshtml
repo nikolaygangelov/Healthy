@@ -1,58 +1,139 @@
 ﻿@{
-	ViewData["Title"] = "Тренировки";
+	ViewData["Title"] = "Спорт";
 }
 
-<section id="services" class="services section-bg">
+<section id="portfolio" class="portfolio">
 	<div class="container" data-aos="fade-up">
 
 		<div class="section-title">
-			<h2>Услуги</h2>
-			<p>Вижте нашите тренировки</p>
+			<h2>Спорт</h2>
+			<p>Тренировки</p>
 		</div>
 
-		<div class="row" data-aos="fade-up" data-aos-delay="200">
-			<div class="col-md-6">
-				<div class="icon-box">
-					<i class="bi bi-laptop"></i>
-					<h4><a href="#">Зумба</a></h4>
-					<p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+		<div class="row" data-aos="fade-up" data-aos-delay="100">
+			<div class="col-lg-12 d-flex justify-content-center">
+				<ul id="portfolio-flters">
+					<li data-filter="*" class="filter-active">Всички</li>
+					<li data-filter=".filter-app">Индивидуални</li>
+					<li data-filter=".filter-card">Колекнивни</li>
+					<li data-filter=".filter-web">На открито</li>
+					<li data-filter=".filter-individual">На закрито</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-individual">
+				<img src="~/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Зумба</h4>
+					<p>Колективен, на закрито</p>
+					<a href="~/assets/img/portfolio/portfolio-1.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Зумба"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
 				</div>
 			</div>
-			<div class="col-md-6 mt-4 mt-md-0">
-				<div class="icon-box">
-					<i class="bi bi-bar-chart"></i>
-					<h4><a href="#">Пилатес</a></h4>
-					<p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+				<img src="~/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Пилатес</h4>
+					<p>Колективен, на закрито</p>
+					<a href="~/assets/img/portfolio/portfolio-1.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Пилатес"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
 				</div>
 			</div>
-			<div class="col-md-6 mt-4 mt-md-0">
-				<div class="icon-box">
-					<i class="bi bi-brightness-high"></i>
-					<h4><a href="#">Народни танци</a></h4>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+				<img src="~/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Народни танци</h4>
+					<p>Колективен, на закрито</p>
+					<a href="~/assets/img/portfolio/portfolio-2.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Народни танци"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
 				</div>
 			</div>
-			<div class="col-md-6 mt-4 mt-md-0">
-				<div class="icon-box">
-					<i class="bi bi-briefcase"></i>
-					<h4><a href="#">Плуване</a></h4>
-					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+				<img src="~/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Плуване</h4>
+					<p>Индивидуален, на закрито</p>
+					<a href="~/assets/img/portfolio/portfolio-3.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Плуване"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
 				</div>
 			</div>
-			<div class="col-md-6 mt-4 mt-md-0">
-				<div class="icon-box">
-					<i class="bi bi-card-checklist"></i>
-					<h4><a href="#">Футбол</a></h4>
-					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+				<img src="~/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Футбол</h4>
+					<p>Колективен, на закрито/открито</p>
+					<a href="~/assets/img/portfolio/portfolio-4.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Футбол"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
 				</div>
 			</div>
-			<div class="col-md-6 mt-4 mt-md-0">
-				<div class="icon-box">
-					<i class="bi bi-clock"></i>
-					<h4><a href="#">Лека атлетика</a></h4>
-					<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+				<img src="~/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Лека атлетика</h4>
+					<p>Индивидуален, на закрито/открито</p>
+					<a href="~/assets/img/portfolio/portfolio-5.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Лека атлетика"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
 				</div>
 			</div>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+				<img src="~/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Тенис</h4>
+					<p>Индивидуален, на закрито/открито</p>
+					<a href="~/assets/img/portfolio/portfolio-6.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Тенис"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+				<img src="~/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Баскетбол</h4>
+					<p>Колективен, на закрито/открито</p>
+					<a href="~/assets/img/portfolio/portfolio-7.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Баскетбол"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+				<img src="~/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Водна топка</h4>
+					<p>Колективен, на закрито</p>
+					<a href="~/assets/img/portfolio/portfolio-8.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Водна топка"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+				<img src="~/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+				<div class="portfolio-info">
+					<h4>Волейбол</h4>
+					<p>Колективен, на закрито</p>
+					<a href="~/assets/img/portfolio/portfolio-9.jpg"
+					   data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Волейбол"><i class="bx bx-plus"></i></a>
+					<a href="#" class="details-link" title="Още"><i class="bx bx-link"></i></a>
+				</div>
+			</div>
+
 		</div>
 
 	</div>

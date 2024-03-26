@@ -23,17 +23,7 @@ namespace Healthy.Controllers
             return View();
         }
 
-        public IActionResult PortfolioDetails()
-        {
-            return View();
-        }
-
         public IActionResult ContactDetails()
-        {
-            return View();
-        }
-
-        public IActionResult Team()
         {
             return View();
         }

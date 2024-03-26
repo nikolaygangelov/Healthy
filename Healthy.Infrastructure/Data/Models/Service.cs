@@ -1,15 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
-using Healthy.Infrastructure.Enumerations;
-using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using static Healthy.Infrastructure.Constants.DataConstants;
+
 
 namespace Healthy.Infrastructure.Data.Models
 {
-	[Comment("Вид тренировка")]
-	public class Training
+	[Comment("Вид услуга")]
+	public class Service
 	{
-		[Comment("Код на тренировка")]
+		[Comment("Код на услуга")]
 		[Key]
 		public int Id { get; set; }
 
@@ -23,10 +23,10 @@ namespace Healthy.Infrastructure.Data.Models
 		[MaxLength(DescriptionMaxLength)]
 		public string Description { get; set; } = string.Empty;
 
-        [Required]
+		[Required]
 		[Comment("Цена за един ден")]
 		[Column(TypeName = "decimal(18, 2)")]
-        public decimal PricePerDay { get; set; }
+		public decimal PricePerDay { get; set; }
 
 		[Required]
 		[Comment("Цена за една седмица")]
@@ -52,22 +52,6 @@ namespace Healthy.Infrastructure.Data.Models
 		[MaxLength(ImagePathMaxLength)]
 		public string ImagePath { get; set; } = string.Empty;
 
-
-		[Required]
-		[Comment("Код на категория")]
-		public int CategoryId { get; set; }
-
-		[ForeignKey(nameof(CategoryId))]
-		public Category Category { get; set; } = null!;
-
-		[Required]
-		[Comment("Открито/Закрито")]
-		public Doors Doors { get; set; }
-
-		[Required]
-		[Comment("Тип според брой хора")]
-		public NumberOfPeople NumberOfPeople { get; set; }
-
 		[Required]
 		[MaxLength(PlaceMaxLength)]
 		[Comment("Място на провеждане")]
@@ -78,9 +62,9 @@ namespace Healthy.Infrastructure.Data.Models
 		[Comment("Активност")]
 		public bool IsDeleted { get; set; }
 
-		public List<TrainingBookingHour> TrainingsBookingHours { get; set; } = new List<TrainingBookingHour>();
-		public List<TrainingCustomer> TrainingsCustomers { get; set; } = new List<TrainingCustomer>();
-		public List<TrainingTrainer> TrainingsTrainers { get; set; } = new List<TrainingTrainer>();
+
+		public List<ServiceBookingHour> ServicesBookingHours { get; set; } = new List<ServiceBookingHour>();
+		public List<ServiceCustomer> ServicesCustomers { get; set; } = new List<ServiceCustomer>();
 		public List<Feedback> Feedbacks { get; set; } = new List<Feedback>();
 	}
 }

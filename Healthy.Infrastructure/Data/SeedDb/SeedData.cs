@@ -1,4 +1,5 @@
 ﻿using Healthy.Infrastructure.Data.Models;
+using Healthy.Infrastructure.Enumerations;
 using Microsoft.AspNetCore.Identity;
 
 namespace Healthy.Infrastructure.Data.SeedDb
@@ -116,7 +117,9 @@ namespace Healthy.Infrastructure.Data.SeedDb
 				PricePerYear = 2000M,
 				Capacity = 15,
 				ImagePath = "~/assets/img/zumba.jpg",
-				CategoryId = Beginner.Id
+				CategoryId = Beginner.Id,
+				Doors = (Doors) Enum.Parse(typeof(Doors), "Indoors"),
+				PlaceOfConduct = "Зала 1"
 			};
 
 			Pilates = new Training()
@@ -130,7 +133,10 @@ namespace Healthy.Infrastructure.Data.SeedDb
 				PricePerYear = 2100M,
 				Capacity = 18,
 				ImagePath = "~/assets/img/pilates.jpg",
-				CategoryId = Beginner.Id
+				CategoryId = Beginner.Id,
+				Doors = (Doors)Enum.Parse(typeof(Doors), "Indoors"),
+				PlaceOfConduct = "Зала 1"
+
 			};
 
 			Swimming = new Training()
@@ -144,7 +150,9 @@ namespace Healthy.Infrastructure.Data.SeedDb
 				PricePerYear = 1800M,
 				Capacity = 12,
 				ImagePath = "~/assets/img/swimming.jpg",
-				CategoryId = Beginner.Id
+				CategoryId = Beginner.Id,
+				Doors = (Doors)Enum.Parse(typeof(Doors), "Indoors"),
+				PlaceOfConduct = "Зала 1"
 			};
 		}
 

@@ -2,10 +2,12 @@
 {
 	public static class DataConstants
 	{
-		public const int TrainingTitleMaxLength = 30;
-		public const int TrainingTitleMinLength = 3;
-		public const int TrainingDescriptionMaxLength = 500;
-		public const int TrainingDescriptionMinLength = 10;
+		public const int TitleMaxLength = 30;
+		public const int TitleMinLength = 3;
+		public const int PlaceMaxLength = 10;
+		public const int PlaceMinLength = 5;
+		public const int DescriptionMaxLength = 500;
+		public const int DescriptionMinLength = 10;
 
 		public const int TrainerPhoneNumberMaxLength = 15;
 		public const int TrainerPhoneNumberMinLength = 7;

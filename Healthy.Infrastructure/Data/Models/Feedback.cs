@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using static Healthy.Infrastructure.Constants.DataConstants;
 
@@ -9,24 +8,27 @@ namespace Healthy.Infrastructure.Data.Models
 	[Comment("Отзив")]
 	public class Feedback
 	{
-		[Comment("Код на отзив")]
 		[Key]
+		[Comment("Код на отзив")]
 		public int Id { get; set; }
 
-		[Required]
 		[Comment("Текст на отзив")]
 		[MaxLength(FeedbackTextMaxLength)]
-		public string FeedbackText { get; set; } = string.Empty;
+		public string? FeedbackText { get; set; }
 
-		[Comment("Оценка за тренировка")]
 		[Required]
+		[Comment("Оценка за тренировка")]
 		public int TrainingRating { get; set; }
 
-		[Comment("Оценка за треньор")]
 		[Required]
+		[Comment("Оценка за треньор")]
 		public int TrainerRating { get; set; }
 
-        [Required]
+		[Required]
+		[Comment("Оценка за услуга")]
+		public int ServiceRating { get; set; }
+
+		[Required]
         public DateTime CreatedOn { get; set; }
 
         [Required]
@@ -35,6 +37,14 @@ namespace Healthy.Infrastructure.Data.Models
 
 		[ForeignKey(nameof(TrainingId))]
 		public Training Training { get; set; } = null!;
+
+
+		[Required]
+		[Comment("Код на услуга")]
+		public int ServiceId { get; set; }
+
+		[ForeignKey(nameof(ServiceId))]
+		public Service Service { get; set; } = null!;
 
 
 		[Required]
